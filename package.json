@@ -1,0 +1,30 @@
+{
+  "name": "user-service-api",
+  "version": "1.0.0",
+  "description": "a simple user service api",
+  "main": "index.js",
+  "author": "thisfikri",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "nodemon --exec babel-node index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "apollo-server": "^2.9.15",
+    "apollo-server-express": "^2.9.15",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "nodemon": "^2.0.2"
+  }
+}

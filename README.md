@@ -1,5 +1,5 @@
 # user-service-api
-A simple api for user service. This api using [GraphQL](https://graphql.org/)
+A simple api for user service. This api using [MongoDB](https://www.mongodb.com/) [GraphQL](https://graphql.org/)
 
 ## Installation
 ```terminal

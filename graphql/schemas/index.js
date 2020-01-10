@@ -1,6 +1,6 @@
-import userSchema from './userSchema';
-import itemSchema from './itemSchema';
-import { gql } from 'apollo-server';
+const userSchema = require('./userSchema');
+const itemSchema = require('./itemSchema');
+const { gql } = require('apollo-server');
 
 const linkSchema = gql`
   type Query {
@@ -11,4 +11,4 @@ const linkSchema = gql`
   }
 `;
 
-export default [linkSchema, userSchema, itemSchema];
+module.exports = [linkSchema, userSchema, itemSchema];

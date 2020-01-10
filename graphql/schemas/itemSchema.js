@@ -1,6 +1,6 @@
-import { gql } from 'apollo-server';
+const { gql } = require('apollo-server');
 
-export default gql`
+module.exports =  gql`
     type Item {
         id: ID,
         name: String,

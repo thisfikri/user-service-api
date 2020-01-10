@@ -1,6 +1,6 @@
-import bcrypt from 'bcryptjs';
-import mongoose from 'mongoose';
-import moment from 'moment';
+const bcrypt = require('bcryptjs');
+const mongoose = require('mongoose');
+const moment = require('moment');
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -36,4 +36,4 @@ userSchema.pre('save', function() {
 
 const user = mongoose.model('user', userSchema);
 
-export default user;
+module.exports = user;

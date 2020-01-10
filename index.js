@@ -1,15 +1,17 @@
-import cors from 'cors';
-import express from 'express';
-import jwt from 'jsonwebtoken';
-import mongoose from 'mongoose';
-import { ApolloServer, AuthenticationError } from 'apollo-server-express';
+const cors = require('cors');
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
+const { ApolloServer, AuthenticationError } = require('apollo-server-express');
+const dotenv = require('dotenv');
 
-import schemas from './graphql/schemas';
-import resolvers from './graphql/resolvers';
+const schemas = require('./graphql/schemas');
+const resolvers = require('./graphql/resolvers');
 
-import userModel from './models/user';
-import itemModel from './models/item';
+const userModel = require('./models/user');
+const itemModel = require('./models/item');
 
+dotenv.config()
 const app = express();
 app.use(cors());
 
@@ -28,11 +30,18 @@ const getUser = async (req) => {
 const server = new ApolloServer({
   typeDefs: schemas,
   resolvers,
+  debug: (process.env.NODE_ENV == 'development'),
   context: async ({ req }) => {
     if (req) {
       const me = await getUser(req);
+      const apiKey = req.headers['api-key']
+
+      if (apiKey !== process.env.API_KEY) {
+        throw new AuthenticationError('You not have an api.');
+      }
 
       return {
+        apiKey,
         me,
         models: {
           userModel,

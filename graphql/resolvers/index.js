@@ -1,4 +1,4 @@
-import itemResolver from './itemResolver';
-import userResolver from './userResolver';
+const itemResolver = require('./itemResolver');
+const userResolver = require('./userResolver');
 
-export default [userResolver, itemResolver];
+module.exports = [userResolver, itemResolver];

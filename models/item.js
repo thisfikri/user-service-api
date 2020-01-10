@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import moment from 'moment';
+const mongoose = require('mongoose');
+const moment = require('moment');
 
 const itemSchema = new mongoose.Schema({
     name: {
@@ -25,4 +25,4 @@ const itemSchema = new mongoose.Schema({
 
 const item = mongoose.model('item', itemSchema);
 
-export default item;
+module.exports = item;

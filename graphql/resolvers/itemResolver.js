@@ -1,9 +1,9 @@
-import { AuthenticationError } from 'apollo-server';
+const { AuthenticationError } = require('apollo-server');
 
 const crudRoles = ["superadmin", "admin"]
 const viewRoles = ["superadmin", "admin", "director", "hoe", "operator"]
 
-export default {
+module.exports = {
     Query: {
         item: async (parent, { id }, { models: { itemModel }, me }, info) => {
             if (!me) {

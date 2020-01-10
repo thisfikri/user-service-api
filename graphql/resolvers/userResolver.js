@@ -1,8 +1,8 @@
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import { AuthenticationError } from 'apollo-server';
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const { AuthenticationError } = require('apollo-server');
 
-export default {
+module.exports =  {
   Query: {
     user: async (parent, { id }, { models: { userModel }, me }, info) => {
       if (!me) {

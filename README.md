@@ -25,3 +25,14 @@ API_KEY=your_api_key
 
 ## usage
 You must set header like ```"api-key":"your_api_key"``` , and the API can be used immediately
+
+example:
+```
+mutation {
+  createUser(username: 'alex', password: '123456', role: 'superadmin') {
+    id
+    username
+    role
+  }
+}
+```

@@ -5,8 +5,7 @@ A simple api for user service. This api using [MongoDB](https://www.mongodb.com/
 ```terminal
 git clone https://github.com/thisfikri/user-service-api.git
 cd user-service-api
-yarn # for yarn
-npm install # for npm
+yarn # i'm using yarn
 ```
 
 in root of project directory
